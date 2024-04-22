@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Password Generator</title>
+        <link rel="stylesheet" href="./styles/input-checkbox.css">
+        <link rel="stylesheet" href="./styles/input-range.css">
+        <link rel="stylesheet" href="./styles/index.css">
+    </head>
+    
+    <body>
+        <main class="main">
+            <img id="js-switcher-to-dark" class="theme-switcher" title="Toggle Dark Theme" 
+            src="./svgs/to-dark.svg" alt="switch-to-dark-theme">
+            <img id="js-switcher-to-light"class="theme-switcher hidden" title="Toggle Light Theme"  
+            src="./svgs/to-light.svg" alt="switch-to-light-theme">
+            <h1 class="title">Generate a <br><span>random password</span></h1>
+            <h3 class="subtitle">Never use an insecure password again</h3>
+            <div class="div-inputs">
+                <div class="div-length">
+                    <label for="pass-length-slider">Length:</label>
+                    <span id="pass-length"></span>
+                    <img id="decrease-length" class="length-regulator js-minus" src="./svgs/minus.svg" title="Decrease the password length" alt="minus">
+                    <input type="range" id="pass-length-slider" name="pass-length" 
+                        min="8" max="32" value="12">
+                    <img id="increase-length" class="length-regulator js-plus" src="./svgs/plus.svg" title="Increase the password length" alt="plus">
+                </div>
+                <div class="div-checkbox">
+                    <label for="box-numbers">include numbers:</label>
+                    <input type="checkbox" id="box-numbers" checked name="numbers">  
+                </div>
+                <div class="div-checkbox">
+                    <label for="box-chars">include special characters:</label>
+                    <input type="checkbox" id="box-chars" checked name="characters">
+                </div>
+            </div>
+            <button id="js-btn-generate"class="btn-generate">Generate passwords</button>
+            <hr class="hr-line">
+            <div class="div-passwords">
+                <span id="js-pass-1" class="pass-frame prevent-select"></span>
+                <span id="js-pass-2" class="pass-frame prevent-select"></span>
+            </div>
+            <p id="js-hint" class="copy-hint hidden">&#10004; Password copied successfully</p>
+        </main>
+
+        <script type="module" src="./code/index.js"></script>
+    </body>
+</html>

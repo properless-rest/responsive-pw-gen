@@ -1,0 +1,474 @@
+@font-face {
+  font-family: Inter;
+  src: url("./fonts/Inter-Variable.ttf");
+}
+
+@font-face {
+  font-family: Karla;
+  src: url("./fonts/Karla-Variable.ttf");
+}
+
+:root {
+    --bg: #ECFDF5;
+    --title: #2B283A;
+    --title-span: #047857;
+    --subtitle: #6B7280;
+    --btn-bg: #059669;
+    --btn-text: #FFFFFF;
+    --hr-line: #D5D4D8;
+    --bg-pass: #273549;
+    --pass-text: #5DEF92;
+}
+
+/* used to disable manual text copying */
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+}
+
+h1, h3 {
+    margin: 0;
+}
+
+.main {
+    position: relative;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    margin: 80px auto;
+    padding: 12px;
+    font-family: Inter;
+}
+
+.theme-switcher {
+    width: 30px;
+    margin: 0 0 30px;
+    border: 1px solid var(--bg);
+    border-radius: 50%;
+    background-color: var(--bg);
+    cursor: pointer;
+    transition: background-color, 0.15s;
+    transition: border-color, 0.5s;
+}
+
+.theme-switcher:active {
+    background-color: var(--subtitle);
+}
+
+.theme-switcher:hover {
+    border: 1px solid var(--title);
+
+}
+
+.hidden {
+    display: none;
+}
+
+.title {
+    margin-bottom: 10px;
+    color: var(--title);
+    font-family: Karla;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.title span {
+    color: var(--title-span);
+}
+
+.subtitle {
+    color: var(--subtitle);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.div-inputs {
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 10px;
+    margin-bottom: 30px;
+    color: var(--title);
+    font-weight: 500;
+}
+
+.div-inputs .div-length {
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+}
+
+.div-length .length-regulator {
+    width: 24px;
+    border: 1px solid var(--title);
+    border-radius: 50%;
+    background-color: var(--title-span);
+    transition: background-color, 0.1s;
+    transition: border, 0.1s;
+}
+
+.div-length .length-regulator:active {
+    background-color: var(--btn-bg);
+}
+
+.div-length .length-regulator:hover {
+    border: 1px dotted var(--title);
+}
+
+.div-length #pass-length {
+    min-width: 28px; /* set width to prevent slider movement on value change */
+    padding: 2px;
+    border: 1px solid var(--title);
+    border-radius: 3px;
+    margin: auto 8px;
+    text-align: center;
+}
+
+.div-length #pass-length-slider {
+    width: 150px;
+    margin: auto 12px;
+}
+
+.div-inputs .div-checkbox {
+    display: flex;
+    align-items: center;
+    grid-column-gap: 12px;
+}
+
+.btn-generate {
+    padding: 9px 16px;
+    border: none;
+    border-radius: 6px;
+    color: var(--btn-text);
+    background-color: var(--btn-bg);
+    text-shadow: 0 0 1px black;
+    cursor: pointer;
+    transition: background-color, 0.2s;
+    transition: transform, 0.2s;
+}
+
+
+.btn-generate:hover {
+    background-color: var(--title-span);
+}
+
+.btn-generate:active {
+    transform: scale(0.97,0.97);
+}
+
+.hr-line {
+    width: 445px;
+    margin: 35px auto;
+    background-color: var(--hr-line);
+}
+
+.div-passwords {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-column-gap: 24px;
+}
+
+.pass-frame {
+    /* width: 210px;
+    height: 40px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--bg-pass);
+    color: var(--pass-text);
+    transition: color, 0.3s;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    pointer-events: none; /* make element unclickable */ 
+}
+
+.pointer {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.pass-frame:active {
+    color: var(--btn-text);
+}
+
+.copy-hint {
+    color: var(--subtitle);
+    font-weight: 600;
+}
+
+@media screen and (max-width: 399.98px) {
+
+    .main {
+        width: 295px;
+        margin: 15px auto;
+        padding: 12px;
+    }
+    
+    .theme-switcher {
+        position: absolute;
+        width: 30px;
+        margin: 0 0 20px;
+    }
+
+    .title {
+        margin: 30px 0 0;
+        text-align: center;
+        font-size: 38px;
+    }
+
+    .subtitle {
+        color: var(--subtitle);
+        text-align: center;
+        line-height: 48px;
+        font-size: 19px;
+        font-weight: 400;
+        font-style: italic;
+        white-space: nowrap;
+    }
+
+    .div-inputs .div-length {
+        display: flex;
+        align-items: center;
+        font-size: 21px;
+        margin: 12px auto;
+    }
+
+    .div-length .length-regulator {
+        width: 22px;
+    }
+
+    .div-length #pass-length {
+        min-width: 24px; /* set width to prevent slider movement on value change */
+        padding: 4px;
+        border-radius: 3px;
+        margin: auto 6px;
+        text-align: center;
+    }
+
+    .div-length #pass-length-slider {
+        width: 120px;
+        margin: auto 6px;
+    }
+
+    .div-inputs .div-checkbox {
+        margin-bottom: 8px;
+        font-size: 18px;
+    }
+
+    .btn-generate {
+        padding: 12px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .hr-line {
+        display: block;
+        width: 290px;
+        margin: 20px auto;
+    }
+
+    .div-passwords {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-row-gap: 21px;
+    }
+
+    .pass-frame {
+        width: 250px;
+        padding: 20px;
+        border: none;
+        border-radius: 6px;
+    }
+
+    .copy-hint {
+        top: 5px;
+        right: 10px;
+    }
+
+}
+
+@media screen and (min-width: 400px) and (max-width: 799.98px) {
+
+    .main {
+        width: 390px;
+        flex-direction: column;
+        margin: 20px auto;
+        padding: 18px;
+    }
+
+    .theme-switcher {
+        width: 40px;
+        margin: 0 0 20px;
+    }
+
+    .title {
+        margin-bottom: 10px;
+        text-align: center;
+        font-family: Karla;
+        font-size: 42px;
+        font-weight: 800;
+    }
+
+    
+    .subtitle {
+        text-align: center;
+        font-style: italic;
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .div-inputs {
+        display: flex;
+        flex-direction: column;
+        grid-row-gap: 18px;
+        margin-bottom: 25px;
+    }
+
+    .div-inputs .div-length {
+        font-size: 22px;
+    }
+
+    .div-length .length-regulator {
+        width: 26px;
+    }
+
+    .div-length #pass-length {
+        min-width: 28px; /* set width to prevent slider movement on value change */
+        margin: auto 10px;
+    }
+
+    .div-length #pass-length-slider {
+        width: 180px;
+        margin: auto 14px;
+    }
+
+    .btn-generate {
+        display: block;
+        max-width: 0 auto;
+        padding: 12px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .hr-line {
+        width: 370px;
+        margin: 30px auto;
+    }
+
+    .div-passwords {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-row-gap: 24px;
+    }
+
+    .pass-frame {
+        width: 330px;
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .copy-hint {
+        margin-top: 40px;
+        padding-left: 15px;
+        color: var(--subtitle);
+        font-size: 21px;
+        font-weight: 600;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+
+    .main {
+        width: 790px;
+        align-items: center;
+        margin: 20px auto 0;
+    }
+
+    .theme-switcher {
+        width: 50px;
+        margin: 0 0 30px;
+    }
+
+    .title {
+        margin-bottom: 16px;
+        text-align: center;
+        font-size: 44px;
+    }
+
+    .subtitle {
+        margin-bottom: 21px;
+        font-style: italic;
+        font-size: 22px;
+    }
+
+    .div-inputs .div-length {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+    }
+
+    .div-length .length-regulator {
+        width: 30px;
+    }
+
+    .div-length #pass-length {
+        min-width: 32px; /* set width to prevent slider movement on value change */
+        padding: 4px;
+        margin: 16px;
+    }
+
+    .div-length #pass-length-slider {
+        width: 180px;
+        margin: auto 12px;
+    }
+
+    .div-inputs .div-checkbox {
+        display: flex;
+        align-items: center;
+        grid-column-gap: 16px;
+        font-size: 20px;
+    }
+
+    .btn-generate {
+        padding: 13px 26px;
+        font-size: 21px;
+        font-weight: 600;
+    }
+
+    .hr-line {
+        width: 660px;
+        margin: 35px auto;
+    }
+
+    .div-passwords {
+        grid-column-gap: 20px;
+    }
+
+    .pass-frame {
+        width: 280px;
+        padding: 20px;
+    }
+
+    .copy-hint {
+        font-size: 21px;
+    }
+
+}
+
+@media screen and (max-height: ){
+    
+}

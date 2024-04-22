@@ -1,0 +1,23 @@
+
+:root {
+    --bg: #ECFDF5;
+    --title: #2B283A;
+    --title-span: #047857;
+    --subtitle: #6B7280;
+    --btn-bg: #059669;
+    --btn-text: #FFFFFF;
+    --hr-line: #D5D4D8;
+    --bg-pass: #273549;
+    --pass-text: #5DEF92;
+}
+
+/* disable default frame around pushed checkboxes */
+input[type="checkbox"] {
+    outline:0;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--btn-bg);
+    transform: scale(1.5);
+}
+
